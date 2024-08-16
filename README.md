@@ -2,6 +2,38 @@
 mashup of TTT and Vit
 
 
+
+```python
+   # Set up the model
+    image_size = 224
+    patch_size = 16
+    in_channels = 3
+    num_classes = 1000
+    embed_dim = 768
+    depth = 12
+    num_heads = 12
+
+    model = TTTViT(
+        image_size=image_size,
+        patch_size=patch_size,
+        in_channels=in_channels,
+        num_classes=num_classes,
+        embed_dim=embed_dim,
+        depth=depth,
+        num_heads=num_heads
+    )
+
+    # Create a sample input
+    batch_size = 4
+    x = torch.randn(batch_size, in_channels, image_size, image_size)
+
+    # Forward pass
+    output = model(x)
+
+    print(f"Input shape: {x.shape}")
+    print(f"Output shape: {output.shape}")
+```
+
 ```shell
 TTTViT input shape: torch.Size([4, 3, 224, 224])
 PatchEmbedding input shape: torch.Size([4, 3, 224, 224])
